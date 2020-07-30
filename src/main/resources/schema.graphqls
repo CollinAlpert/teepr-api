@@ -1,0 +1,59 @@
+type Query {
+    getCurrencies: [Currency]!
+}
+
+type BillingRate {
+    id: Int!,
+    user: User!,
+    rate: Float!,
+    currency: Currency!
+}
+
+type Client {
+    id: Int!,
+    user: User!,
+    name: String!
+}
+
+type Currency {
+    id: Int!,
+    name: String!
+}
+
+type Project {
+    id: Int!,
+    user: User!,
+    client: Client!,
+    name: String!,
+    billingRate: BillingRate!
+}
+
+type ProjectTag {
+    id: Int!,
+    project: Project!,
+    tag: Tag!
+}
+
+type Tag {
+    id: Int!,
+    user: User!,
+    name: String!
+}
+
+type Time {
+    id: Int!,
+    user: User!,
+    project: Project!,
+    billingRate: BillingRate!,
+    start: String!,
+    end: String!,
+    isBillable: Boolean!
+}
+
+type User {
+    id: Int!
+    firstName: String!
+    lastName: String!
+    email: String!
+    password: String!
+}
