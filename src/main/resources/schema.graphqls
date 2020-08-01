@@ -17,7 +17,8 @@ type Client {
 
 type Currency {
     id: Int!,
-    name: String!
+    name: String!,
+    symbol: String!
 }
 
 type Project {
